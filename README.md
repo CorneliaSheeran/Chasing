@@ -8,4 +8,4 @@ Empirical power spectra generation - emp_PS.py
 
 Analytical power spectra generation - py_PS.py
 
-Continuous time simulations - continuoustime_spatial.jl, continuoustime_final.jl
+Continuous time simulations - continuoustime_spatial.jl, continuoustime_final.jl, continuoustime_twogender.jl
