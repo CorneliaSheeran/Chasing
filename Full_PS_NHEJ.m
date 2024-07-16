@@ -11,13 +11,13 @@ function [newflog, P_time_D, P_time_W, newflogr, newPSD, newPSW]  = Full_PS(num_
                   round_s  = round(sval, 2);
                   round_ep = round(epsilonval, 2);                  
                   round_Cc = round(Ccval, 0);
-round_nu = round(nuval, 2);
+round_nu = round(nuval, 3);
 
 format_h  = sprintf('%.2f', round_h);
 format_s  = sprintf('%.2f', round_s);
 format_ep = sprintf('%.2f', round_ep);
 format_Cc = sprintf('%.1f', round_Cc);
-format_nu = sprintf('%.2f', round_nu);    
+format_nu = sprintf('%.3f', round_nu);    
 
     for i = 1:num_files
         home_directory = "/rds/general/user/csheeran/home" %getenv('HOME');

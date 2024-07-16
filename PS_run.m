@@ -1,7 +1,7 @@
-hvals = linspace(0, 1, 5);
-svals = linspace(0, 1, 5);
-epsilonvals = linspace(0, 1, 5);
-Ccvals = [100, 500, 1000, 2000, 5000, 1e4]; %linspace(50, 1e3, 5);
+%hvals = linspace(0, 1, 5);
+%svals = linspace(0, 1, 5);
+epsilonvals = [0.5, 0.7, 0.95]; %linspace(0, 1, 5);
+Ccvals = [50, 100, 500, 1000, 5000, 1e4]; %linspace(50, 1e3, 5);
 hval = 0.3;
 sval = 0.95;
 

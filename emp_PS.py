@@ -26,9 +26,10 @@ from scipy.optimize import fsolve
 
 hval = 0.3
 sval = 0.95
-Cclist = [100, 500, 1000, 2000, 5000, 1e4]
+Cclist = [50, 100, 500, 1000, 5000, 1e4]
+epsilonlist = [0.5, 0.7, 0.95]
 
-for epsilonval in np.linspace(0, 1, 5):
+for epsilonval in epsilonlist:
     for Ccval in tqdm.tqdm(Cclist):
             
         round_h  = round(hval, 2)

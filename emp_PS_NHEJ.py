@@ -26,9 +26,9 @@ from scipy.optimize import fsolve
 
 hval = 0.3
 sval = 0.95
-eplist = [0.5, 0.9]
-Cclist = [100, 500, 1000, 2000, 5000, 1e4]
-nulist = np.linspace(0, 0.1, 5)
+eplist = [0.5, 0.7, 0.95]
+Cclist = [50, 100, 500, 1000, 5000, 1e4]
+nulist = [0.001, 0.01, 0.05, 0.1]
 
 for epsilonval in eplist:
     for Ccval in tqdm.tqdm(Cclist):
@@ -38,13 +38,13 @@ for epsilonval in eplist:
             round_s  = round(sval, 2)
             round_ep = round(epsilonval, 2)
             round_Cc = round(Ccval, 0)
-            round_nu = round(nuval, 2)
+            round_nu = round(nuval, 3)
             
             format_h  = '{:.2f}'.format(round_h)
             format_s  = '{:.2f}'.format(round_s)
             format_ep = '{:.2f}'.format(round_ep)
             format_Cc = '{:.1f}'.format(round_Cc)
-            format_nu = '{:.2f}'.format(round_nu)
+            format_nu = '{:.3f}'.format(round_nu)
                 
             path_freqt = f"/rds/general/user/csheeran/home/FREQ_NHEJ/freq_time_h={format_h}_s={format_s}_ep={format_ep}_Cc={format_Cc}_nu={format_nu}.csv"
             path_freqk = f"/rds/general/user/csheeran/home/FREQ_NHEJ/freq_space_h={format_h}_s={format_s}_ep={format_ep}_Cc={format_Cc}_nu={format_nu}.csv"
@@ -80,7 +80,7 @@ for epsilonval in eplist:
             plt.title('Logscale Plot with Scatter Plots')
             plt.xlabel('Temporal Frequency')
             plt.ylabel('Power')
-            time.savefig(f"/rds/general/user/csheeran/home/PS_plots/NHEJ_PS_time_h={round_h}_s={round_s}_ep={round_ep}_Cc={round_Cc}.pdf", bbox_inches='tight')
+            time.savefig(f"/rds/general/user/csheeran/home/PS_plots/NHEJ_PS_time_h={round_h}_s={round_s}_ep={round_ep}_Cc={round_Cc}_nu={format_nu}.pdf", bbox_inches='tight')
             
             spacetime = plt.figure(2)
             plt.scatter(freqk, kD, label='Sim Drive')
@@ -91,5 +91,5 @@ for epsilonval in eplist:
             plt.title('Logscale Plot with Scatter Plots')
             plt.xlabel('Spatial Frequency')
             plt.ylabel('Power')
-            spacetime.savefig(f"/rds/general/user/csheeran/home/NHEJ_PS_plots/PS_time_h={round_h}_s={round_s}_ep={round_ep}_Cc={round_Cc}.pdf", bbox_inches='tight')
+            spacetime.savefig(f"/rds/general/user/csheeran/home/NHEJ_PS_plots/PS_time_h={round_h}_s={round_s}_ep={round_ep}_Cc={round_Cc}_nu={format_nu}.pdf", bbox_inches='tight')
 
